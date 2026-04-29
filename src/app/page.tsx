@@ -77,7 +77,7 @@ export default function HomePage() {
             {/* Left */}
             <div>
               <p className="text-[var(--blue-light)] text-sm font-semibold tracking-wider uppercase mb-4">
-                A burocracia tem solução. E ela tem nome.
+                A burocracia tem solução.
               </p>
 
               <h1 className="text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
