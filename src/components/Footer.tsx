@@ -41,7 +41,7 @@ export default function Footer() {
               Parceiros dos maiores escritórios de advocacia do Brasil.
             </p>
             <p className="mt-4 text-[var(--blue-light)] text-sm italic font-medium">
-              "{COMPANY.tagline}"
+              &ldquo;{COMPANY.tagline}&rdquo;
             </p>
 
             {/* Social icons */}

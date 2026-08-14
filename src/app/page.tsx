@@ -89,7 +89,7 @@ export default function HomePage() {
 
               <blockquote className="border-l-[3px] border-[var(--blue-light)] pl-5 mb-7">
                 <p className="text-xl italic font-medium text-white/90 leading-relaxed">
-                  "{COMPANY.tagline}"
+                  &ldquo;{COMPANY.tagline}&rdquo;
                 </p>
               </blockquote>
 
@@ -282,7 +282,7 @@ export default function HomePage() {
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
                 <p className="text-[var(--blue-dark)] font-semibold text-lg leading-relaxed italic">
-                  "9 dos 10 maiores escritórios de advocacia de São Paulo já trabalharam com a Heracorp."
+                  &ldquo;9 dos 10 maiores escritórios de advocacia de São Paulo já trabalharam com a Heracorp.&rdquo;
                 </p>
               </div>
               {/* 4 mini-stats */}
