@@ -84,6 +84,9 @@ export const metadata: Metadata = {
       "Especialistas em serviços paralegais, legalização empresarial e due diligence em São Paulo.",
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: "Awm7YV7dWEr5xwoaPuBfd7eCWamQ1LFytlbD_o1PkYw",
+  },
 };
 
 export default function RootLayout({
