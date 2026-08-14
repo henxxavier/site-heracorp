@@ -16,6 +16,7 @@ const organizationJsonLd = {
   description:
     "25 anos especializados em serviços paralegais, legalização empresarial, registro de atos societários e due diligence em São Paulo.",
   url: BASE_URL,
+  image: `${BASE_URL}/logo-novo-heracorp-fundobranco.png`,
   telephone: COMPANY.phone,
   email: COMPANY.email,
   address: {
