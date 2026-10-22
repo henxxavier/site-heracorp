@@ -166,7 +166,7 @@ export default async function ServicoPage({
             Fale com um especialista da Heracorp e receba uma proposta personalizada em até 24 horas.
           </p>
           <p className="text-blue-300/70 text-xs mb-8">
-            Mais de 40.000 serviços executados · 500+ clientes satisfeitos · 25 anos de mercado
+            Mais de 50.000 serviços executados · 500+ clientes atendidos · Mais de 25 anos de mercado
           </p>
           <Button href="/contato" size="lg" variant="primary">
             Solicitar Orçamento Agora

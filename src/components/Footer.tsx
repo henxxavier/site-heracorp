@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { COMPANY, NAV_LINKS } from "@/lib/constants";
+import { COMPANY, NAV_LINKS, LOGO } from "@/lib/constants";
 
 const InstagramIcon = () => (
   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -16,7 +16,7 @@ const LinkedInIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--blue-dark)] text-white relative overflow-hidden">
+    <footer className="bg-[var(--blue-ink)] text-white relative overflow-hidden">
       {/* Diagonal pattern */}
       <div className="absolute inset-0 hero-pattern opacity-100 pointer-events-none" />
 
@@ -26,18 +26,17 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-5 group">
-              <span className="inline-flex items-center bg-white rounded-xl px-4 py-2.5 shadow-sm transition-shadow group-hover:shadow-md">
-                <Image
-                  src="/logo-novo-heracorp-fundobranco.png"
-                  alt="Grupo HeraCorp — Consultoria Paralegal"
-                  width={160}
-                  height={86}
-                  className="w-[160px] h-auto"
-                />
-              </span>
+              <Image
+                src={LOGO.srcWhite}
+                alt={LOGO.alt}
+                width={LOGO.width}
+                height={LOGO.height}
+                sizes="170px"
+                className="w-[170px] h-auto opacity-95 group-hover:opacity-100 transition-opacity"
+              />
             </Link>
             <p className="text-blue-100/80 text-sm leading-relaxed max-w-xs">
-              Especialistas em legalização empresarial com 25 anos de mercado.
+              {COMPANY.experience} de expertise em legalização empresarial e serviços paralegais.
               Parceiros dos maiores escritórios de advocacia do Brasil.
             </p>
             <p className="mt-4 text-[var(--blue-light)] text-sm italic font-medium">
@@ -118,8 +117,16 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-blue-200/60">
-          <p>© {new Date().getFullYear()} Grupo Heracorp. Todos os direitos reservados.</p>
-          <p>Fundada em 1999 · São Paulo, SP · Brasil</p>
+          <p>
+            © {new Date().getFullYear()} Grupo Heracorp. Todos os direitos reservados.
+            {COMPANY.cnpj && <> · CNPJ {COMPANY.cnpj}</>}
+          </p>
+          <p className="flex items-center gap-4">
+            <Link href="/politica-de-privacidade" className="hover:text-white transition-colors">
+              Política de Privacidade
+            </Link>
+            <span>Desde {COMPANY.foundedYear} · São Paulo, SP</span>
+          </p>
         </div>
       </div>
     </footer>

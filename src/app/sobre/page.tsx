@@ -5,7 +5,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 export const metadata: Metadata = {
   title: "Sobre Nós",
   description:
-    "Conheça a história, missão e valores do Grupo Heracorp — 25 anos especializados em serviços paralegais e legalização empresarial em São Paulo.",
+    "Conheça a história, missão e valores do Grupo Heracorp — mais de 25 anos especializados em serviços paralegais e legalização empresarial em São Paulo.",
 };
 
 const values = [
@@ -58,7 +58,7 @@ export default function SobrePage() {
           <p className="section-label text-blue-300 mb-4">Nossa história</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-5">Sobre o Grupo Heracorp</h1>
           <p className="text-blue-100/70 text-lg max-w-2xl mx-auto leading-relaxed">
-            25 anos transformando a complexidade jurídica e regulatória em
+            Mais de 25 anos transformando a complexidade jurídica e regulatória em
             vantagem competitiva para nossos clientes.
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function SobrePage() {
               <p>
                 Hoje, com{" "}
                 <strong className="text-[var(--blue-dark)] font-semibold">
-                  mais de 40.000 serviços executados
+                  mais de 50.000 serviços executados
                 </strong>
                 , somos reconhecidos como referência no segmento — atuando em juntas
                 comerciais, cartórios, Receita Federal, Banco Central e demais órgãos

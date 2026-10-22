@@ -14,9 +14,11 @@ const organizationJsonLd = {
   "@type": "ProfessionalService",
   name: COMPANY.name,
   description:
-    "25 anos especializados em serviços paralegais, legalização empresarial, registro de atos societários e due diligence em São Paulo.",
+    "Mais de 25 anos de expertise em serviços paralegais, legalização empresarial, registro de atos societários e due diligence em São Paulo.",
   url: BASE_URL,
-  image: `${BASE_URL}/logo-novo-heracorp-fundobranco.png`,
+  image: `${BASE_URL}/logo-heracorp-2026.png`,
+  logo: `${BASE_URL}/logo-heracorp-2026.png`,
+  foundingDate: "1999",
   telephone: COMPANY.phone,
   email: COMPANY.email,
   address: {
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     template: "%s | Grupo Heracorp",
   },
   description:
-    "25 anos especializados em serviços paralegais, legalização empresarial, registro de atos societários e due diligence. Mais de 40.000 serviços executados em São Paulo.",
+    "Mais de 25 anos de expertise em serviços paralegais, legalização empresarial, registro de atos societários e due diligence. Mais de 50.000 serviços executados.",
   alternates: {
     canonical: "/",
   },
@@ -74,13 +76,13 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "https://heracorp.com.br",
     siteName: "Grupo Heracorp",
-    title: "Grupo Heracorp — Consultoria Paralegal · 25 anos",
+    title: "Grupo Heracorp — Consultoria Paralegal · Mais de 25 anos",
     description:
       "Especialistas em serviços paralegais, legalização empresarial e due diligence em São Paulo. Parceiros dos maiores escritórios de advocacia do Brasil.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grupo Heracorp — Consultoria Paralegal · 25 anos",
+    title: "Grupo Heracorp — Consultoria Paralegal · Mais de 25 anos",
     description:
       "Especialistas em serviços paralegais, legalização empresarial e due diligence em São Paulo.",
   },

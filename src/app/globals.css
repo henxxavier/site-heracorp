@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 /* ── CSS Variables ───────────────────────────────────────────────── */
+/* Paleta alinhada ao novo logo (navy #1A3764 + cinza #71706F + lavanda #D6D5E2) */
 :root {
-  --blue-dark:  #1c4c86;
-  --blue-mid:   #1a4578;
-  --blue-deep:  #0f3260;
+  --blue-dark:  #1a3764;
+  --blue-mid:   #18325c;
+  --blue-deep:  #0d1f3d;
+  --blue-ink:   #091630;
   --blue-light: #0292b7;
   --blue-hover: #027a9a;
-  --gray-body:  #545454;
-  --gray-muted: #8a8a8a;
-  --surface:    #f8f9fa;
-  --border:     #e8eaed;
+  --lavender:   #d6d5e2;
+  --gray-body:  #4f5560;
+  --gray-muted: #8a8f99;
+  --surface:    #f6f7fb;
+  --border:     #e6e8ef;
   --white:      #ffffff;
 }
 
@@ -32,16 +35,27 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
 }
 
 /* ── Section label utility ───────────────────────────────────────── */
 .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--font-dm-sans), sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--blue-light);
+}
+.section-label::before {
+  content: '';
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
 }
 
 /* Section title accent line */
@@ -73,22 +87,24 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
+  bottom: 2px;
+  left: 1rem;
+  right: 1rem;
   height: 2px;
   background: var(--blue-light);
   border-radius: 1px;
-  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-link:hover::after,
 .nav-link.active::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 /* ── Scroll-in animations ────────────────────────────────────────── */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(32px); }
+  from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0);    }
 }
 
@@ -107,53 +123,87 @@ h1, h2, h3, h4, h5, h6 {
 .animate-in-scale { animation: scaleIn  0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
 .anim-delay-100 { animation-delay: 100ms; }
-.anim-delay-150 { animation-delay: 150ms; }
 .anim-delay-200 { animation-delay: 200ms; }
-.anim-delay-250 { animation-delay: 250ms; }
 .anim-delay-300 { animation-delay: 300ms; }
-.anim-delay-350 { animation-delay: 350ms; }
 .anim-delay-400 { animation-delay: 400ms; }
-.anim-delay-500 { animation-delay: 500ms; }
 
 .anim-hidden {
   opacity: 0;
   transform: translateY(20px);
 }
 
+/* ── Hero: elipse do logo desenhada ──────────────────────────────── */
+@keyframes drawOrbit {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(-12deg); }
+  50%      { transform: translateY(-14px) rotate(-11deg); }
+}
+.hero-orbit {
+  animation: floatSlow 12s ease-in-out infinite;
+}
+.hero-orbit path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawOrbit 2.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+}
+.hero-orbit path:nth-child(2) { animation-delay: 0.6s; }
+
+@keyframes pulseDot {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.pulse-dot { animation: pulseDot 2s infinite; }
+
+/* ── Stats: barra de progresso ───────────────────────────────────── */
+.stat-bar {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.stat-bar.is-on { transform: scaleX(1); }
+
 /* ── Card hover ──────────────────────────────────────────────────── */
 .service-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 16px;
   transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 1px 2px rgba(13,31,61,0.04);
 }
 .service-card:hover {
-  box-shadow: 0 4px 20px rgba(28,76,134,0.1), 0 1px 6px rgba(0,0,0,0.06);
-  transform: translateY(-3px);
-  border-color: rgba(2,146,183,0.3);
+  box-shadow: 0 18px 40px -18px rgba(26,55,100,0.28);
+  transform: translateY(-4px);
+  border-color: rgba(2,146,183,0.35);
 }
 
 /* ── Glass card ──────────────────────────────────────────────────── */
 .glass-card {
-  background: rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.06);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
+  border-radius: 20px;
 }
 
-/* ── Hero diagonal pattern ───────────────────────────────────────── */
+/* ── Fundo com grade sutil ───────────────────────────────────────── */
 .hero-pattern {
   background-image:
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 28px,
-      rgba(255,255,255,0.022) 28px,
-      rgba(255,255,255,0.022) 29px
-    );
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 30% 40%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 30% 40%, #000 30%, transparent 75%);
 }
+
+/* ── FAQ ─────────────────────────────────────────────────────────── */
+.faq-item summary { list-style: none; cursor: pointer; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item .faq-icon { transition: transform 0.25s ease; }
+.faq-item[open] .faq-icon { transform: rotate(45deg); }
 
 /* ── Smooth scrolling ────────────────────────────────────────────── */
 html { scroll-behavior: smooth; }
@@ -161,4 +211,14 @@ html { scroll-behavior: smooth; }
 /* ── Form inputs ─────────────────────────────────────────────────── */
 input, select, textarea {
   font-family: var(--font-dm-sans), sans-serif;
+}
+
+/* ── Acessibilidade: menos movimento ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .anim-hidden { opacity: 1; transform: none; }
+  .animate-in-up, .animate-in-fade, .animate-in-scale,
+  .hero-orbit, .hero-orbit path, .pulse-dot { animation: none !important; }
+  .hero-orbit path { stroke-dashoffset: 0; }
+  .stat-bar { transition: none; transform: scaleX(1); }
 }

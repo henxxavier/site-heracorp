@@ -42,7 +42,7 @@ export default function OpengraphImage() {
             display: "flex",
           }}
         >
-          Consultoria Paralegal · 25 anos
+          Consultoria Paralegal · Mais de 25 anos
         </div>
         <div
           style={{

@@ -128,9 +128,9 @@ export default function ContatoPage() {
               <p className="section-label mb-3">Formulário</p>
               <h2 className="text-2xl font-bold text-[var(--blue-dark)] mb-1">Envie uma Mensagem</h2>
               <p className="text-[var(--gray-body)] text-sm mb-7">
-                Retornaremos em até 1 dia útil.
+                Preencha os dados e fale direto com um especialista pelo WhatsApp.
               </p>
-              <ContactForm />
+              <ContactForm source="contato" />
             </div>
           </AnimateOnScroll>
         </div>

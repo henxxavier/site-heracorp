@@ -4,7 +4,7 @@ import { SERVICES } from "@/lib/services";
 const BASE_URL = "https://heracorp.com.br";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/sobre", "/servicos", "/contato"];
+  const routes = ["", "/sobre", "/servicos", "/contato", "/politica-de-privacidade"];
   const serviceRoutes = SERVICES.map((s) => `/servicos/${s.slug}`);
 
   return [...routes, ...serviceRoutes].map((route) => ({
