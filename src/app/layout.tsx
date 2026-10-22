@@ -19,6 +19,7 @@ const organizationJsonLd = {
   image: `${BASE_URL}/logo-heracorp-2026.png`,
   logo: `${BASE_URL}/logo-heracorp-2026.png`,
   foundingDate: "1999",
+  taxID: COMPANY.cnpj,
   telephone: COMPANY.phone,
   email: COMPANY.email,
   address: {

@@ -10,7 +10,7 @@ export const COMPANY = {
   instagram: "https://www.instagram.com/heracorparalegais/",
   linkedin: "https://www.linkedin.com/company/grupoheracorporativa",
   // Preencher para exibir no rodapé (recomendado para Google Ads)
-  cnpj: "",
+  cnpj: "05.251.829/0001-80",
   foundedYear: 1999,
   experience: "Mais de 25 anos",
   stats: {
